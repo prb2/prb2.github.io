@@ -3,4 +3,10 @@ title: Blog
 layout: page
 ---
 
-Here is my blog.
+{% for post in site.posts limit: 10 %}
+	<strong>{{ post.title }}</strong>
+	</br>
+	{{ post.date }}
+	</br>
+	</br>
+{% endfor %}
