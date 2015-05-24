@@ -1,15 +1,15 @@
 ---
-title: Home
+title: About
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	
+
 	<head>
 		<link href="../css/bootstrap.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	
+
 	<style>
 		th {
 			font-weight:	200;
@@ -17,14 +17,24 @@ title: Home
 		}
 		td {
 			font-weight:	200;
-			font-size:	20px;
+			font-size:	25px;
 		}
 		
+		hr {
+			border-width: 1.5px;
+			border-color: black;
+		}
+		
+		.title {
+			font-size: 25px;
+			font-weight: 400;
+			margin-top: 5px;
+		}
+
 		.row {
-			margin-top:	5%;
-			margin-bottom:	5%;
+			margin-top:	10%;
 		}
-		
+
 		a:link {
 			text-decoration:none;
 			color:#333;
@@ -42,7 +52,7 @@ title: Home
 			color:#333;
 		}
 	</style>
-	
+
 	<body>
 
 		<div class="container-fluid">
@@ -52,26 +62,32 @@ title: Home
 						<thead>
 							<th><a href="#">Prudhvi Boyapalli</a></th>
 						</thead>
-					
+
 						<tbody>
-					
-							<tr><td><a href="pages/projects">projects</a></td></tr>
 
-							<tr><td><a href="pages/blog">blog</a></td></tr>
+							<tr><td><a href="projects/">projects</a></td></tr>
 
-							<tr><td><a href="http://prb2.github.com">github</a></td></tr>
+							<tr><td><a href="blog/">blog</a></td></tr>
 
-							<tr><td><a href="pages/photography">photography</a></td></tr>
-							
-							<tr><td><a href="pages/about">about</a></td></tr>
+							<tr><td><a href="photography/">photography</a></td></tr>
 
-							<tr><td><a href="mailtp:prrb02@gmail.com">email</a></td></tr>				
-					
+							<tr><td><a href="http://www.github.com/prb2">github</a></td></tr>
+
+							<tr><td><a href="mailto:prrb02@gmail.com">email</a></td></tr>
+
 							<tr><td></td></tr>
 						</tbody>
 					</table>
 				</div>
-			</div>		
+				
+				<div class="row">
+					<div class="title">About</div>
+					<hr>
+					<div class="lead">
+						Here is some stuff about me.
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>
