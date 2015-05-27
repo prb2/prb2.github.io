@@ -8,7 +8,7 @@ free time. A 40 hour work week feels like nothing compared to the constant
 onslaught of assignments, projects, and tests that entail the school year. 
 So, one of the things I've set out to do with all this extra time is watch 
 more films. There isn't any specific theme or genre I'm trying to explore, but
-rather I just want to expose myself to more film and see how that affects me.
+rather I just want to expose myself to more film.
 
 <img src="images/week1.jpg" class="img-responsive" alt="Responsive image"></img>
 

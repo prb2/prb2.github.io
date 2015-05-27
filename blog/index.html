@@ -3,6 +3,18 @@ title: Blog
 layout: page
 ---
 
+<style>
+		
+	.subtitle {
+		font-family: "adelle", serif;
+	}
+	.title,.subtitle,  
+	
+	p {
+		font-family: "adobe-garamond-pro", serif;
+	}
+</style>
+
 {% for post in site.posts limit: 10 %}
 	{{ post.date | date_to_string }}
 	</br></br>
