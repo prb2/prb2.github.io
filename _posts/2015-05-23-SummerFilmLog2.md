@@ -3,8 +3,6 @@ title: Summer Film Log - Week 2
 ---
 
 
-<img src="images/week2.jpg" class="img-responsive" alt="Responsive image"></img>
-
 #### Films May 17th - May 23th
 
 + **May 19** - Meet the Parents, Jay Roach (2000)
