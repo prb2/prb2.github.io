@@ -5,11 +5,19 @@
 			<script src="//use.typekit.net/iko5qge.js"></script>
 			<script>try{Typekit.load();}catch(e){}</script>
 	</head>
-		
+
 	<style>
+		a {
+			color: #485b77;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: #8296b4;
+			text-decoration: underline;
+		}
 		body {
-			font-family: "adobe-garamond-pro";
 			font-size: 18px;
+			line-height: 30px;
 			margin-top: 2%;
 			margin-bottom: 2%;
 		}
@@ -17,37 +25,43 @@
 			border-width: 1.5px;
 			border-color: black;
 		}
-
-		li {
-			list-style-type: none;
+		p {
+			margin-top: 20px;
+			margin-bottom: 20px
 		}
-
 		.title {
-			font-family: "adobe-garamond-pro";	
-			font-size: 25px;
-			font-weight: 600;
-			margin-top: 5px;
-		}
-
-		.subtitle {
-			font-family: "adobe-garamond-pro";
-			font-size: 20px;
-			font-weight: 600;
+			font-size: 30px;
+			font-weight: 200;
 			margin-top: 5px;
 			margin-bottom: 5px;
 		}
-		
+
+		.posttitle {
+			font-size: 25px;
+			font-weight: 200;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.subtitle {
+			font-size: 23px;
+			font-weight: 200;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
 		.serif {
-			font-family: serif;
+			font-family: "adobe-garamod-pro";
+		}
+		.sidebar {
+			<!-- background-color: #eee; -->
 		}
 	</style>
 	<body>
-	
+
 		<div class="container-fluid">
-			<div class="col-md-2 col-md-offset-1">
+			<div class="col-md-2 col-md-offset-1 sidebar">
 				{% include sidebar.html %}
 			</div>
-			
+
 			<div class="col-md-6 col-md-offset-1">
 				<div class="title">{{ page.title }}</div>
 				<hr>

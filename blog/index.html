@@ -3,24 +3,14 @@ title: Blog
 layout: page
 ---
 
-<style>
-		
-	.subtitle {
-		font-family: "adelle", serif;
-	}
-	.title,.subtitle,  
-	
-	p {
-		font-family: "adobe-garamond-pro", serif;
-	}
-</style>
-
-{% for post in site.posts limit: 10 %}
+{% for post in site.posts %}
+	</br>
 	{{ post.date | date_to_string }}
-	</br></br>
-	<div class="subtitle">{{ post.title }}</div>
+	</br>
+	<div class="posttitle">{{ post.title }}</div>
 	</br>
 	{{ post.content }}
 
+	</br>
 	<hr>
 {% endfor %}

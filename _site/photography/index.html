@@ -5,11 +5,19 @@
 			<script src="//use.typekit.net/iko5qge.js"></script>
 			<script>try{Typekit.load();}catch(e){}</script>
 	</head>
-		
+
 	<style>
+		a {
+			color: #485b77;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: #8296b4;
+			text-decoration: underline;
+		}
 		body {
-			font-family: "adobe-garamond-pro";
 			font-size: 18px;
+			line-height: 30px;
 			margin-top: 2%;
 			margin-bottom: 2%;
 		}
@@ -17,82 +25,75 @@
 			border-width: 1.5px;
 			border-color: black;
 		}
-
-		li {
-			list-style-type: none;
+		p {
+			margin-top: 20px;
+			margin-bottom: 20px
 		}
-
 		.title {
-			font-family: "adobe-garamond-pro";	
-			font-size: 25px;
-			font-weight: 600;
-			margin-top: 5px;
-		}
-
-		.subtitle {
-			font-family: "adobe-garamond-pro";
-			font-size: 20px;
-			font-weight: 600;
+			font-size: 30px;
+			font-weight: 200;
 			margin-top: 5px;
 			margin-bottom: 5px;
 		}
-		
+
+		.posttitle {
+			font-size: 25px;
+			font-weight: 200;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.subtitle {
+			font-size: 23px;
+			font-weight: 200;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
 		.serif {
-			font-family: serif;
+			font-family: "adobe-garamod-pro";
+		}
+		.sidebar {
+			<!-- background-color: #eee; -->
 		}
 	</style>
 	<body>
-	
+
 		<div class="container-fluid">
-			<div class="col-md-2 col-md-offset-1">
+			<div class="col-md-2 col-md-offset-1 sidebar">
 				<style>
 		th {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight:	200;
 			font-size:	25px;
 		}
 		td {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight:	200;
 			font-size:	20px;
 		}
-		
-		a:link {
-			text-decoration:none;
-			color:#333;
-		}
-		a:visited {
-			text-decoration:none;
-			color:#333;
-		}
-		a:hover {
-			text-decoration:none;
-			color:#67c295;
-		}
-		a:active {
-			text-decoration:none;
-			color:#333;
+
+		.sidelink {
+			text-decoration: none !important;
 		}
 </style>
 
 <row>
 	<table class="table">
 		<thead>
-			<th><a href="../index.html">Prudhvi Boyapalli</a></th>
+			<th><a class="sidelink" href="../index.html">Prudhvi Boyapalli</a></th>
 		</thead>
 
 		<tbody>
-			<tr><td><a href="../">home</a></td></tr>
+			<tr><td><a class="sidelink" href="../">home</a></td></tr>
 
-			<tr><td><a href="../projects/">projects</a></td></tr>
+			<tr><td><a class="sidelink" href="../projects/">projects</a></td></tr>
 
-			<tr><td><a href="../blog/">blog</a></td></tr>
+			<tr><td><a class="sidelink" href="../blog/">blog</a></td></tr>
 
-			<tr><td><a href="../photography/">photography</a></td></tr>
+			<tr><td><a class="sidelink" href="../photography/">photography</a></td></tr>
 
-			<tr><td><a href="http://www.github.com/prb2">github</a></td></tr>
+			<tr><td><a class="sidelink" href="http://www.github.com/prb2">github</a></td></tr>
 
-			<tr><td><a href="mailto:prrb02@gmail.com">email</a></td></tr>				
+			<tr><td><a class="sidelink" href="mailto:prrb02@gmail.com">email</a></td></tr>
 
 			<tr><td></td></tr>
 		</tbody>
@@ -100,7 +101,7 @@
 </row>
 
 			</div>
-			
+
 			<div class="col-md-6 col-md-offset-1">
 				<div class="title">Photography</div>
 				<hr>

@@ -11,6 +11,14 @@ title: About
 	</head>
 
 	<style>
+		a {
+			color: #485b77;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: #8296b4;
+			text-decoration: underline;
+		}
 		th {
 			font-weight:	200;
 			font-size:	30px;
@@ -19,37 +27,24 @@ title: About
 			font-weight:	200;
 			font-size:	25px;
 		}
-		
+
 		hr {
 			border-width: 1.5px;
 			border-color: black;
 		}
-		
+
 		.title {
 			font-size: 25px;
 			font-weight: 400;
 			margin-top: 5px;
 		}
 		.row {
-			margin-top:	10%;
+			margin-top:	5%;
+		}
+		.mainlink {
+			text-decoration: none !important;
 		}
 
-		a:link {
-			text-decoration:none;
-			color:#333;
-		}
-		a:visited {
-			text-decoration:none;
-			color:#333;
-		}
-		a:hover {
-			text-decoration:none;
-			color:#67c295;
-		}
-		a:active {
-			text-decoration:none;
-			color:#333;
-		}
 	</style>
 
 	<body>
@@ -59,36 +54,53 @@ title: About
 				<div class="row">
 					<table class="table">
 						<thead>
-							<th><a href="#">Prudhvi Boyapalli</a></th>
+							<th><a class="mainlink" href="#">Prudhvi Boyapalli</a></th>
 						</thead>
 
 						<tbody>
 
-							<tr><td><a href="projects/">projects</a></td></tr>
+							<tr><td><a class="mainlink" href="projects/">projects</a></td></tr>
 
-							<tr><td><a href="blog/">blog</a></td></tr>
+							<tr><td><a class="mainlink" href="blog/">blog</a></td></tr>
 
-							<tr><td><a href="photography/">photography</a></td></tr>
+							<tr><td><a class="mainlink" href="photography/">photography</a></td></tr>
 
-							<tr><td><a href="http://www.github.com/prb2">github</a></td></tr>
+							<tr><td><a class="mainlink" href="http://www.github.com/prb2">github</a></td></tr>
 
-							<tr><td><a href="mailto:prrb02@gmail.com">email</a></td></tr>
+							<tr><td><a class="mainlink" href="mailto:prrb02@gmail.com">email</a></td></tr>
 
 							<tr><td></td></tr>
 						</tbody>
 					</table>
 				</div>
-				
+
 				<div class="row">
 					<div class="title">About</div>
 					<hr>
 					<div class="lead">
-						I am a student studying computer science at Rice University. I enjoy listening to music, riding my bike, and coding.  
+						I am a student studying computer science at Rice University. I enjoy listening to music, riding my bike, and coding.
 						</br></br>
-						<a href="http://www.github.com/prb2"><em>View my repos on github &#10230;</em></a>
+						<a href="http://www.github.com/prb2">View my repos on github</a>
 						</br>
-						<a href="mailto:prrb02@gmail.com"><em>Email me at prrb02@gmail.com &#10230;</em></a>
+						<a href="mailto:prrb02@gmail.com">Email me at prrb02@gmail.com</a>
 					</div>
+				</div>
+				
+				<div class="row">
+					<div class="title">Latest Post</div>
+					<hr>
+					{% for post in site.posts limit: 1 %}
+						
+						
+						<div class="lead">
+							{{ post.date | date_to_string }}
+							|
+							{{ post.title }}
+						</div>
+						{{ post.excerpt }}
+					{% endfor %}
+
+					<div class="lead"><a href="/blog">Continue reading</a></div>
 				</div>
 			</div>
 		</div>

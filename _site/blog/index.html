@@ -5,11 +5,19 @@
 			<script src="//use.typekit.net/iko5qge.js"></script>
 			<script>try{Typekit.load();}catch(e){}</script>
 	</head>
-		
+
 	<style>
+		a {
+			color: #485b77;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: #8296b4;
+			text-decoration: underline;
+		}
 		body {
-			font-family: "adobe-garamond-pro";
 			font-size: 18px;
+			line-height: 30px;
 			margin-top: 2%;
 			margin-bottom: 2%;
 		}
@@ -17,82 +25,75 @@
 			border-width: 1.5px;
 			border-color: black;
 		}
-
-		li {
-			list-style-type: none;
+		p {
+			margin-top: 20px;
+			margin-bottom: 20px
 		}
-
 		.title {
-			font-family: "adobe-garamond-pro";	
-			font-size: 25px;
-			font-weight: 600;
-			margin-top: 5px;
-		}
-
-		.subtitle {
-			font-family: "adobe-garamond-pro";
-			font-size: 20px;
-			font-weight: 600;
+			font-size: 30px;
+			font-weight: 200;
 			margin-top: 5px;
 			margin-bottom: 5px;
 		}
-		
+
+		.posttitle {
+			font-size: 25px;
+			font-weight: 200;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.subtitle {
+			font-size: 23px;
+			font-weight: 200;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
 		.serif {
-			font-family: serif;
+			font-family: "adobe-garamod-pro";
+		}
+		.sidebar {
+			<!-- background-color: #eee; -->
 		}
 	</style>
 	<body>
-	
+
 		<div class="container-fluid">
-			<div class="col-md-2 col-md-offset-1">
+			<div class="col-md-2 col-md-offset-1 sidebar">
 				<style>
 		th {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight:	200;
 			font-size:	25px;
 		}
 		td {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight:	200;
 			font-size:	20px;
 		}
-		
-		a:link {
-			text-decoration:none;
-			color:#333;
-		}
-		a:visited {
-			text-decoration:none;
-			color:#333;
-		}
-		a:hover {
-			text-decoration:none;
-			color:#67c295;
-		}
-		a:active {
-			text-decoration:none;
-			color:#333;
+
+		.sidelink {
+			text-decoration: none !important;
 		}
 </style>
 
 <row>
 	<table class="table">
 		<thead>
-			<th><a href="../index.html">Prudhvi Boyapalli</a></th>
+			<th><a class="sidelink" href="../index.html">Prudhvi Boyapalli</a></th>
 		</thead>
 
 		<tbody>
-			<tr><td><a href="../">home</a></td></tr>
+			<tr><td><a class="sidelink" href="../">home</a></td></tr>
 
-			<tr><td><a href="../projects/">projects</a></td></tr>
+			<tr><td><a class="sidelink" href="../projects/">projects</a></td></tr>
 
-			<tr><td><a href="../blog/">blog</a></td></tr>
+			<tr><td><a class="sidelink" href="../blog/">blog</a></td></tr>
 
-			<tr><td><a href="../photography/">photography</a></td></tr>
+			<tr><td><a class="sidelink" href="../photography/">photography</a></td></tr>
 
-			<tr><td><a href="http://www.github.com/prb2">github</a></td></tr>
+			<tr><td><a class="sidelink" href="http://www.github.com/prb2">github</a></td></tr>
 
-			<tr><td><a href="mailto:prrb02@gmail.com">email</a></td></tr>				
+			<tr><td><a class="sidelink" href="mailto:prrb02@gmail.com">email</a></td></tr>
 
 			<tr><td></td></tr>
 		</tbody>
@@ -100,26 +101,117 @@
 </row>
 
 			</div>
-			
+
 			<div class="col-md-6 col-md-offset-1">
 				<div class="title">Blog</div>
 				<hr>
-				<style>
-		
-	.subtitle {
-		font-family: "adelle", serif;
-	}
-	.title,.subtitle,  
-	
-	p {
-		font-family: "adobe-garamond-pro", serif;
-	}
-</style>
+				
+	</br>
+	08 Jun 2015
+	</br>
+	<div class="posttitle">OMPL Web Development - Part 1</div>
+	</br>
+	<p>This summer, I am working in the <a href="http://www.kavrakilab.org">Kavraki Lab</a>
+research group at Rice University. My main project this summer will be to
+create a web application that will allow users to solve motion planning
+problems for robots using the Open Motion Planning Library.</p>
+
+<p>An existing application, called
+<a href="http://ompl.kavrakilab.org/gui.html">OMPL.app</a>, is available for desktop clients
+but it involves a fairly lengthy installation process. The purpose of the web
+application is to provide all of the features of the desktop application and
+then some. Users will be able to configure a motion planning problem and solve
+for a solution path. Upon success, the solution will be displayed and the user
+will be able to interact with the path. The functionality described thus far
+already exists in OMPL.app, but the web application will have several key
+improvements.</p>
+
+<div class="subtitle">Speed</div>
 
 
+<p>One of primary motivations for creating the web version is to drastically
+reduce the time it takes to go from being interested in motion planning to
+actually creating and solving motion planning problems. The
+following steps must be carried out before solving a motion planning problem:</p>
+
+<blockquote><p>OMPL.app</p>
+
+<ol>
+<li>Download the OMPL library and its dependencies</li>
+<li>Install all dependencises</li>
+<li>Build OMPL</li>
+<li>Generate Python bindings</li>
+<li>Run OMPL.app</li>
+</ol>
+
+
+<p>OMPL Web</p>
+
+<ol>
+<li>Open the website</li>
+</ol>
+</blockquote>
+
+<p>OMPL.app can take hours to setup; the web implementation will take mere seconds.</p>
+
+<div class="subtitle">Benchmarking</div>
+
+
+<p>The other important improvement will be planner benchmarking. OMPL takes a
+sample-based approach to motion planning and there exist many planners for
+utilizing different sampling methods. In addition to the dozen or so planners
+that are available within OMPL, user can create their own planners and use
+those instead. Due to the significant variation in how planners operate,
+selecting a particular planner may yield better results for a specific query
+than some other planner. For this reason it is important to have the ability to
+compare the results of different planners for a given problem. Currently,
+planners can be compared on the <a href="http://plannerarena.org">Planner Arena</a> website.</p>
+
+<p>Once a user is satisfied with their problem configuration on the OMPL Web
+application, they will be able to submit a job to the server
+for benchmarking. They can specify benchmarking parameters such as
+the number of iterations to run each planner, time limits, etc. When the job is
+completed, the user will be notified and their result will be available
+on Planner Arena for analysis.</p>
+
+<p>In the next development blog entry, I will discuss the work that I've completed
+so far and the high level plan for the remaining development.</p>
+
+<p><a href="http://ompl.kavrakilab.org">Open Motion Planning Library</a></p>
+
+<p><a href="https://github.com/prb2/omplweb">OMPL Web on GitHub</a></p>
+
+
+	</br>
+	<hr>
+
+	</br>
+	06 Jun 2015
+	</br>
+	<div class="posttitle">Summer Film Log - Week 4</div>
+	</br>
+	<h4>Films viewed  May 31st - June 6th</h4>
+
+<ul>
+<li><p><strong>May 31</strong> - Election, Alexander Payne (1999)</p></li>
+<li><p><strong>June 1</strong> - Entourage, Doug Ellin (2015)</p></li>
+<li><p><strong>June 2</strong> - Wet Hot American Summer, David Wain (2001)</p></li>
+<li><p><strong>June 3</strong> - The One I Love, Charlie McDowell (2014)</p></li>
+<li><p><strong>June 4</strong> - Casino Royale, Ken Huges and others (1967)</p></li>
+<li><p><strong>June 5</strong> - The Royal Tenenbaums, Wes Anderson (2001)</p></li>
+<li><p><strong>June 6</strong> - Swingers</p></li>
+<li><p><strong>June 6</strong> -</p></li>
+</ul>
+
+
+
+	</br>
+	<hr>
+
+	</br>
 	31 May 2015
-	</br></br>
-	<div class="subtitle">Scheller's Place</div>
+	</br>
+	<div class="posttitle">Scheller's Place</div>
 	</br>
 	<p><a href="https://www.flickr.com/photos/125510902@N05/17673362234"
 title="DSC00763_Processed by Prudhvi Boyapalli, on Flickr"><img
@@ -146,37 +238,37 @@ src='https://a.tiles.mapbox.com/v4/violethill0704.mapnhe4g/attribution,zoompan,z
 
 
 
+	</br>
 	<hr>
 
+	</br>
 	30 May 2015
-	</br></br>
-	<div class="subtitle">Summer Film Log - Week 3</div>
+	</br>
+	<div class="posttitle">Summer Film Log - Week 3</div>
 	</br>
 	<h4>Films viewed  May 24th - May 30th</h4>
 
-<p><img src="images/week3.jpg" class="img-responsive" alt="Responsive image"></img></p>
-
 <ul>
-<li><strong>May 24</strong> - It's Complicated, Nancy Meyers (2009)</li>
-<li><strong>May 25</strong> - Horrible Bosses 2, Sean Anders (2014)</li>
-<li><strong>May 26</strong> - Knocked Up, Judd Apatow (2007)</li>
-<li><strong>May 27</strong> - Gambit, Michael Hoffman (2012)</li>
-<li><strong>May 28</strong> - Spy, Paul Feig (2015)</li>
-<li><strong>May 29</strong> - Vivir es f&aacute;cil con los ojos cerrados (Living is Easy With Eyes Closed), David Trueba (2013)</li>
-<li><strong>May 30</strong> - Super Troopers, Jay Chandrasekhar (2001)</li>
+<li><p><strong>May 24</strong> - It's Complicated, Nancy Meyers (2009)</p></li>
+<li><p><strong>May 25</strong> - Horrible Bosses 2, Sean Anders (2014)</p></li>
+<li><p><strong>May 26</strong> - Knocked Up, Judd Apatow (2007)</p></li>
+<li><p><strong>May 27</strong> - Gambit, Michael Hoffman (2012)</p></li>
+<li><p><strong>May 28</strong> - Spy, Paul Feig (2015)</p></li>
+<li><p><strong>May 29</strong> - Vivir es f&aacute;cil con los ojos cerrados (Living is Easy With Eyes Closed), David Trueba (2013)</p></li>
+<li><p><strong>May 30</strong> - Super Troopers, Jay Chandrasekhar (2001)</p></li>
 </ul>
 
 
 
+	</br>
 	<hr>
 
-	23 May 2015
-	</br></br>
-	<div class="subtitle">Summer Film Log - Week 2</div>
 	</br>
-	<p><img src="images/week2.jpg" class="img-responsive" alt="Responsive image"></img></p>
-
-<h4>Films May 17th - May 23th</h4>
+	23 May 2015
+	</br>
+	<div class="posttitle">Summer Film Log - Week 2</div>
+	</br>
+	<h4>Films viewed May 17th - May 23th</h4>
 
 <ul>
 <li><p><strong>May 19</strong> - Meet the Parents, Jay Roach (2000)</p></li>
@@ -187,11 +279,13 @@ src='https://a.tiles.mapbox.com/v4/violethill0704.mapnhe4g/attribution,zoompan,z
 
 
 
+	</br>
 	<hr>
 
+	</br>
 	16 May 2015
-	</br></br>
-	<div class="subtitle">Summer Film Log - Week 1</div>
+	</br>
+	<div class="posttitle">Summer Film Log - Week 1</div>
 	</br>
 	<p>Summer is usually the only time of the year when I have a significant amount of
 free time. A 40 hour work week feels like nothing compared to the constant
@@ -200,9 +294,7 @@ So, one of the things I've set out to do with all this extra time is watch
 more films. There isn't any specific theme or genre I'm trying to explore, but
 rather I just want to expose myself to more film.</p>
 
-<p><img src="images/week1.jpg" class="img-responsive"></img></p>
-
-<h4>Films May 9th - May 16th</h4>
+<h4>Films viewed May 9th - May 16th</h4>
 
 <ul>
 <li><p><strong>May 09</strong> - The Darjeeling Limited, Wes Anderson (2007)</p></li>
@@ -217,11 +309,13 @@ rather I just want to expose myself to more film.</p>
 
 
 
+	</br>
 	<hr>
 
+	</br>
 	14 May 2015
-	</br></br>
-	<div class="subtitle">W</div>
+	</br>
+	<div class="posttitle">W</div>
 	</br>
 	<p>Ever since I started using Vim regularly, I find myself looking for ways to do
 more things from the command line. So, today I set out to write a basic command
@@ -251,6 +345,7 @@ it, but this one is mine.</p>
 for details on installation and usage. <a href="http://prb2.github.io/weather">&#10230;</a></p>
 
 
+	</br>
 	<hr>
 
 

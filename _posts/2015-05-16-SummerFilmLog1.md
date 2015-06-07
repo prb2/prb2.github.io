@@ -10,7 +10,7 @@ So, one of the things I've set out to do with all this extra time is watch
 more films. There isn't any specific theme or genre I'm trying to explore, but
 rather I just want to expose myself to more film.
 
-#### Films May 9th - May 16th
+#### Films viewed May 9th - May 16th
 
 * **May 09** - The Darjeeling Limited, Wes Anderson (2007)
 
