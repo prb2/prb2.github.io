@@ -105,6 +105,61 @@
 				<hr>
 				
 	</br>
+	19 Jul 2015
+	</br>
+	<div class="posttitle">OMPL Web Development - Part 5</div>
+	</br>
+	<p>Benchmarking planners is a time consuming process, so instead of waiting on the
+webpage to see the results, users submit jobs and are notified when the results
+become available. This process is handled by <a href="http://www.celeryproject.org">Celery</a>,
+an asynchronous task queue implemented in Python. When a benchmarking job is
+submitted, it is given to a Celery worker to execute, freeing up the Flask
+server to continue to serve other requests. Using Celery for benchmarking was
+fairly simple to setup since the client doesn't need any information from the
+completed job.</p>
+
+<p><img src="" class="img-responsive"></p>
+
+<p>However, solving a motion planning problem can also take a large
+amount of time; solving them synchronously would be impractical.</p>
+
+<div class="subtitle">Asynchronous Solving</div>
+
+
+<p>The problem with making regular motion planning asynchronous is that the user
+waits for the solution. For asynchronous solving to work, there must be
+some amount of coordination between the client and server to ensure that the
+right results are returned to the right user.</p>
+
+<p><img src="../images/omplweb/async_solving.png" class="img-responsive"></p>
+
+<p>To solve this problem, I came up with the pattern seen above. When the user
+submits a motion planning problem, the task is assigned to a Celery worker and
+the ID of that task is immediately returned to the client. Then, the client
+will preiodically poll the server for the results.</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/omplapp/poll/&lt;task_id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="lineno"> 2</span> <span class="k">def</span> <span class="nf">poll</span><span class="p">(</span><span class="n">task_id</span><span class="p">):</span>
+<span class="lineno"> 3</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="lineno"> 4</span> <span class="sd">    Checks if the task corresponding to the input ID has completed. If the</span>
+<span class="lineno"> 5</span> <span class="sd">    task is done solving, the solution is returned.</span>
+<span class="lineno"> 6</span> <span class="sd">    &quot;&quot;&quot;</span>
+<span class="lineno"> 7</span>     
+<span class="lineno"> 8</span>     <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Recieved poll for task: &quot;</span> <span class="o">+</span> <span class="n">task_id</span><span class="p">)</span>
+<span class="lineno"> 9</span>     
+<span class="lineno">10</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">solve</span><span class="o">.</span><span class="n">AsyncResult</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
+<span class="lineno">11</span>     
+<span class="lineno">12</span>     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
+<span class="lineno">13</span>         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span> <span class="mi">200</span>
+<span class="lineno">14</span>     <span class="k">else</span> <span class="p">:</span>
+<span class="lineno">15</span>         <span class="k">return</span> <span class="s">&quot;Result for task id: &quot;</span> <span class="o">+</span> <span class="n">task_id</span> <span class="o">+</span> <span class="s">&quot; isn&#39;t ready yet.&quot;</span><span class="p">,</span> <span class="mi">202</span></code></pre></div>
+
+
+
+	</br>
+	<hr>
+
+	</br>
 	07 Jul 2015
 	</br>
 	<div class="posttitle">OMPL Web Development - Part 4</div>
@@ -164,20 +219,31 @@ without the need for the user to obtain the database file.</p>
 	</br>
 	<div class="posttitle">OMPL Web Development - Part 3</div>
 	</br>
-	<p>This post will be updated soon.</p>
-
-<div class="subtitle">Visualization</div>
+	<div class="subtitle">Visualization</div>
 
 
-<ul>
-<li>Animation</li>
-<li>Solution path line</li>
-<li>Static robot path</li>
-<li>Toggling bbox and axis helper</li>
-</ul>
+<p>Once a motion planning problem has been solved, the user is presented with
+several options for visualizing the solution. Initially, a line is displayed
+indicating the path from the start position to the goal position. The user can
+then toggle an animation of the robot and adjust its speed as it travels from
+its starting position to the goal. In addition, a static visualization
+consisting of robots placed at points along the solution path is also available.</p>
+
+<p><img src="../images/omplweb/solution_anim.jpg" class="img-responsive"></p>
+
+<center>A "path robot" (top left) travels from the start position (bottom left) to the goal position (bottom-right).</center>
 
 
-<p><img src="" class="img-responsive"></p>
+<p><img src="../images/omplweb/solution_static.jpg" class="img-responsive"></p>
+
+<center>A static view of the robot's orientation at each point along the
+solution path.</center>
+
+
+<p>The user can interact with the visualiztion using the mouse. Left-clicking and
+dragging will rotate the environment while right-clicking and dragging will pan.
+The visualization was constructed with <a href="https://www.khronos.org/webgl/">WebGL</a>
+using the <a href="http://threejs.org">THREE.js</a> library.</p>
 
 
 	</br>

@@ -90,12 +90,18 @@
 						
 						
 						<!-- <div class="lead"> -->
-							<!-- 07 Jul 2015 -->
+							<!-- 19 Jul 2015 -->
 							<!-- | -->
-							<!-- OMPL Web Development - Part 4 -->
+							<!-- OMPL Web Development - Part 5 -->
 						<!-- </div> -->
-						<!-- <p>With problem configuration and visualization implemented, the next big
-feature is benchmarking.</p>
+						<!-- <p>Benchmarking planners is a time consuming process, so instead of waiting on the
+webpage to see the results, users submit jobs and are notified when the results
+become available. This process is handled by <a href="http://www.celeryproject.org">Celery</a>,
+an asynchronous task queue implemented in Python. When a benchmarking job is
+submitted, it is given to a Celery worker to execute, freeing up the Flask
+server to continue to serve other requests. Using Celery for benchmarking was
+fairly simple to setup since the client doesn't need any information from the
+completed job.</p>
  -->
 					<!--  -->
 
