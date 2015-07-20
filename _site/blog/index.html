@@ -112,7 +112,7 @@
 	<div class="posttitle">OMPL Web Development - Part 5</div>
 	</br>
 	<p>Benchmarking planners is a time consuming process, so instead of waiting on the
-webpage to see the results, users submit jobs and are notified when the results
+web page to see the results, users submit jobs and are notified when the results
 become available. This process is handled by <a href="http://www.celeryproject.org">Celery</a>,
 an asynchronous task queue implemented in Python. When a benchmarking job is
 submitted, it is given to a Celery worker to execute, freeing up the Flask
@@ -138,7 +138,7 @@ right results are returned to the right user.</p>
 <p>To solve this problem, I came up with the pattern seen above. When the user
 submits a motion planning problem, the task is assigned to a Celery worker and
 the ID of that task is immediately returned to the client. Then, the client
-will preiodically poll the server for the results.</p>
+will periodically poll the server for the results.</p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/omplapp/poll/&lt;task_id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="lineno"> 2</span> <span class="k">def</span> <span class="nf">poll</span><span class="p">(</span><span class="n">task_id</span><span class="p">):</span>
