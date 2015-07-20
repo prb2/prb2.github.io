@@ -103,7 +103,9 @@
 			<div class="col-md-6 col-md-offset-1">
 				<div class="title">Blog</div>
 				<hr>
-				
+				<link href="../css/solarized-light.css" rel="stylesheet">
+
+
 	</br>
 	19 Jul 2015
 	</br>
@@ -144,15 +146,15 @@ will preiodically poll the server for the results.</p>
 <span class="lineno"> 4</span> <span class="sd">    Checks if the task corresponding to the input ID has completed. If the</span>
 <span class="lineno"> 5</span> <span class="sd">    task is done solving, the solution is returned.</span>
 <span class="lineno"> 6</span> <span class="sd">    &quot;&quot;&quot;</span>
-<span class="lineno"> 7</span>     
-<span class="lineno"> 8</span>     <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Recieved poll for task: &quot;</span> <span class="o">+</span> <span class="n">task_id</span><span class="p">)</span>
-<span class="lineno"> 9</span>     
-<span class="lineno">10</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">solve</span><span class="o">.</span><span class="n">AsyncResult</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
-<span class="lineno">11</span>     
-<span class="lineno">12</span>     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
-<span class="lineno">13</span>         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span> <span class="mi">200</span>
-<span class="lineno">14</span>     <span class="k">else</span> <span class="p">:</span>
-<span class="lineno">15</span>         <span class="k">return</span> <span class="s">&quot;Result for task id: &quot;</span> <span class="o">+</span> <span class="n">task_id</span> <span class="o">+</span> <span class="s">&quot; isn&#39;t ready yet.&quot;</span><span class="p">,</span> <span class="mi">202</span></code></pre></div>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">solve</span><span class="o">.</span><span class="n">AsyncResult</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span>     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
+<span class="lineno">11</span>         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span> <span class="mi">200</span>
+<span class="lineno">12</span>     <span class="k">else</span> <span class="p">:</span>
+<span class="lineno">13</span>         <span class="k">return</span> <span class="s">&quot;Result for task id: &quot;</span> <span class="o">+</span> <span class="n">task_id</span> <span class="o">+</span> <span class="s">&quot; isn&#39;t ready yet.&quot;</span><span class="p">,</span> <span class="mi">202</span></code></pre></div>
+
+
 
 
 
