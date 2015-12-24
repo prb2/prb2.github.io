@@ -2,9 +2,7 @@
 <html lang="en">
 	<head>
 			<link href="../css/bootstrap.css" rel="stylesheet">
-			<script src="//use.typekit.net/iko5qge.js"></script>
 			<link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
-			<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 
 	<style>
@@ -17,10 +15,8 @@
 			text-decoration: underline;
 		}
 		body {
-			font-size: 18px;
-			line-height: 30px;
-			margin-top: 2%;
-			margin-bottom: 2%;
+            font-family: Palatino, serif;
+			font-size: 16px;
 		}
 		hr {
 			border-width: 1.5px;
@@ -30,40 +26,59 @@
 			margin-top: 20px;
 			margin-bottom: 20px
 		}
+
+		th {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 400;
+		}
+		td {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 400;
+		}
+        .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+            border: none;
+        }
 		.title {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 30px;
-			font-weight: 200;
+			font-weight: 300;
 			margin-top: 5px;
 			margin-bottom: 5px;
 		}
 
 		.posttitle {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 25px;
-			font-weight: 200;
+			font-weight: 300;
 			margin-top: 5px;
 			margin-bottom: 5px;
 		}
 		.subtitle {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 23px;
-			font-weight: 200;
+			font-weight: 300;
 			margin-top: 40px;
 			margin-bottom: 20px;
 		}
-		.serif {
-			font-family: "adobe-garamod-pro";
-		}
+        .col-md-6 {
+			margin-top: 2%;
+			margin-bottom: 2%;
+        }
 	</style>
 	<body>
 
 		<div class="container-fluid">
 			<div class="col-md-2 col-md-offset-1 sidebar">
 				<style>
-		th {
+    .sidebar-float {
+        top: 0;
+    }
+		th.sidebar {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: 100;
-			font-size:	72px;
+			font-size:	55px;
 		}
-		td {
+		td.sidebar {
 			font-family: Lato, Helvetica, Arial, sans-serif;
 			font-weight:	300;
 			font-size:	25px;
@@ -74,26 +89,28 @@
 		}
 </style>
 
-<div>
+<div class="">
 	<table class="table">
 		<thead>
-			<th><a class="sidelink" href="../index.html">pb</a></th>
+			<th class="sidebar"><a class="sidelink" href="../index.html">pb</a></th>
 		</thead>
 
 		<tbody>
-			<tr><td><a class="sidelink" href="../">home</a></td></tr>
+			<tr><td class="sidebar"><a class="sidelink" href="../">home</a></td></tr>
 
-			<tr><td><a class="sidelink" href="../projects/">projects</a></td></tr>
+			<tr><td class="sidebar"><a class="sidelink" href="../research/">research</a></td></tr>
 
-			<tr><td><a class="sidelink" href="../blog/">blog</a></td></tr>
+			<tr><td class="sidebar"><a class="sidelink" href="../projects/">projects</a></td></tr>
 
-			<tr><td><a class="sidelink" href="../photography/">photography</a></td></tr>
+			<tr><td class="sidebar"><a class="sidelink" href="../blog/">blog</a></td></tr>
 
-			<tr><td><a class="sidelink" href="http://www.github.com/prb2">github</a></td></tr>
+			<!-- <tr><td class="sidebar"><a class="sidelink" href="../photography/">photography</a></td></tr> -->
 
-			<tr><td><a class="sidelink" href="mailto:prrb02@gmail.com">email</a></td></tr>
+			<tr><td class="sidebar"><a class="sidelink" href="http://www.github.com/prb2">github</a></td></tr>
 
-			<tr><td></td></tr>
+			<tr><td class="sidebar"><a class="sidelink" href="mailto:prrb02@gmail.com">email</a></td></tr>
+
+			<tr><td class="sidebar"></td></tr>
 		</tbody>
 	</table>
 </div>
@@ -106,12 +123,12 @@
 				<div class="subtitle">LaTeX Symbol Search</div>
 A plugin for the Mac app <a
 	href="http://flashlight.nateparrott.com">Flashlight</a> that allows you to
-search for symbols and find their LaTeX command.
+search for symbols and find their LaTeX command, all from the OSX Spotlight.
 </br></br>
 <a href="http://prb2.GitHub.io/latex-symbols">View the project page</em></a>
 </br>
 <a href="http://www.GitHub.com/prb2/latex-symbols">View the source code on GitHub</em></a>
-</br></br></br>
+</br></br>
 
 <div class="subtitle">W</div>
 A command line weather client.
@@ -119,7 +136,7 @@ A command line weather client.
 <a href="http://prb2.GitHub.io/weather">View the project page</em></a>
 </br>
 <a href="http://www.GitHub.com/prb2/weather">View the source code on GitHub</em></a>
-</br></br></br>
+</br></br>
 
 
 <div class="subtitle">Editor</div>
@@ -128,14 +145,14 @@ A distraction free, plain text editor.
 <a href="http://prb2.GitHub.io/editor/index.html">Start writing with Editor</em></a>
 </br>
 <a href="http://www.GitHub.com/prb2/editor">View the source code on GitHub</em></a>
-</br></br></br>
+</br></br>
 
 
 <div class="subtitle">Ripple</div>
 Ripple allows you to use a Pebble smartwatch to control scrolling and YouTube playback in Google Chrome. Created during PennApps Spring 2014.
 </br></br>
 <a href="http://projects.boyapalli.org/ripple.html">View the project page</em></a>
-</br></br></br>
+</br></br>
 
 
 <div class="subtitle">Chrome Themes</div>

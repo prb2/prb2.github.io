@@ -3,8 +3,6 @@ description: "Personal Homepage"
 
 url: "http://0.0.0.0:4000"
 
-paginate: 10
-
 markdown: rdiscount
 permalink: pretty
 highlighter: pygments
