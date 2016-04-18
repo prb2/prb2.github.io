@@ -48,7 +48,9 @@ title: About
 		.mainlink {
 			text-decoration: none !important;
 		}
-
+        .circle {
+            border-radius: 50%;
+        }
 	</style>
 
 	<body>
@@ -58,7 +60,15 @@ title: About
 				<div class="row">
 					<table class="table">
 						<thead>
-							<th><a class="mainlink" href="#">pb</a></th>
+							<th>
+                                <div class="col-md-2">
+                                    <a class="mainlink" href="#">pb</a>
+                                </div>
+                                <div class="col-md-2 col-md-offset-6">
+                                    <img src="images/profile/self.jpg"
+                                    width=128 height=128 class="circle"></img>
+                                </div>
+                            </th>
 						</thead>
 
 						<tbody>
