@@ -13,44 +13,51 @@ title: About
 
 	<style>
 		a {
-			color: #485b77;
-			text-decoration: underline;
+			color: #333;
+            text-decoration: underline;
 		}
 		a:hover {
 			color: #8296b4;
 			text-decoration: underline;
 		}
 		th {
-			font-weight: 100;
+			font-family: Lato, sans-serif;
+			font-weight: 300;
 			font-size:	128px;
+            text-align: center;
 		}
 		td {
-			font-family: Lato;
-			font-weight:	300;
-			font-size:	25px;
+			font-family: Palatino, serif;
+            font-size: 18px;
+                padding-right: 20px;
 		}
-
 		hr {
-			border-width: 1.5px;
-			border-color: black;
+			border-width: 2px;
+			border-color: #485b77;
 		}
 
 		.lead {
 			font-family: Palatino, serif;
 			font-size: 18px;
 		}
-
 		.title {
 			font-size: 25px;
 			font-weight: 400;
 			margin-top: 5px;
 		}
 		.mainlink {
-			text-decoration: none !important;
+			color: #485b77;
+            text-decoration: none !important;
 		}
 		.circle {
 			border-radius: 50%;
 		}
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
 	</style>
 
 	<body>
@@ -59,41 +66,22 @@ title: About
 			<div class="col-md-4 col-md-offset-4">
 				<div class="row">
 					<table class="table">
-						<thead>
-							<th>
-								<div class="col-md-2">
-									<a class="mainlink" href="#">pb</a>
-								</div>
-								<div class="col-md-2 col-md-offset-6">
-									<img src="images/profile/self.jpg"
-									width=128 height=128 class="circle"></img>
-								</div>
-							</th>
-						</thead>
-
-						<tbody>
-
-							<tr><td><a class="mainlink" href="research/">research</a></td></tr>
-
-							<tr><td><a class="mainlink" href="projects/">projects</a></td></tr>
-
-							<tr><td><a class="mainlink" href="blog/">blog</a></td></tr>
-
-							<tr><td><a class="mainlink" href="http://www.github.com/prb2">github</a></td></tr>
-
-							<tr><td><a class="mainlink" href="http://www.prudhviboyapalli.com/static/prb_resume.pdf">resume</a></td></tr>
-
-							<tr><td><a class="mainlink" href="mailto:prrb02@gmail.com">email</a></td></tr>
-
-							<tr><td></td></tr>
-						</tbody>
+                        <th>
+                            <div class="left">
+                                <a class="mainlink" href="#">pb</a>
+                            </div>
+                            <div class="right">
+                                <img src="images/profile/self.jpg"
+                                width=128 height=128 class="circle"></img>
+                            </div>
+                        </th>
 					</table>
 				</div>
 
 				<div class="row">
-					<div class="title">About</div>
-					<hr>
+                    <hr>
 					<div class="lead">
+                        </br>
 						Hi! My name is Prudhvi Boyapalli.
 						</br></br>
 						I work as a software development engineer at Amazon on
@@ -103,11 +91,29 @@ title: About
 						worked as a research assistant under Professors Lydia
 						Kavraki and Mark Moll in the <a href="http://www.kavrakilab.org">
 						Physical and Biological Computing Group.</a>
-						</br></br>
-						<!-- <a href="http://www.github.com/prb2">View my repos on github</a> -->
-						<!-- </br> -->
-						<!-- <a href="mailto:prrb02@gmail.com">Email me at prrb02@gmail.com</a> -->
+                        </br></br>
 					</div>
+                    <hr>
+				</div>
+
+				<div class="row">
+					<table>
+						<tbody>
+							<tr>
+                                <td><a href="research/">research</a></td>
+
+                                <td><a href="projects/">projects</a></td>
+
+                                <td><a href="blog/">blog</a></td>
+
+                                <td><a href="http://www.github.com/prb2">github</a></td>
+
+                                <td><a href="http://www.prudhviboyapalli.com/static/prb_resume.pdf">resume</a></td>
+
+                                <td><a href="mailto:prrb02@gmail.com">email</a></td>
+                            </tr>
+						</tbody>
+					</table>
 				</div>
 
 				<!-- <div class="row"> -->
