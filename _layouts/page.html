@@ -17,7 +17,7 @@
 		body {
             font-family: Palatino, serif;
 			font-size: 16px;
-            padding-top: 90px;
+            padding-top: 50px;
 		}
 		hr {
 			border-width: 1.5px;
@@ -53,14 +53,14 @@
 	</style>
 	<body>
 
-		<div class="container">
+        <div class="container">
             <div class="col-md-6 col-md-offset-3">
-                {% include navbar.html %}
-
-                <div class="title">{{ page.title }}</div>
-                    <hr>
-                    {{ content }}
+                <div class="title">
+                    {{ page.title }}
                 </div>
+                {% include navbar.html %}
+                <hr>
+                {{ content }}
             </div>
 		</div>
 	</body>
