@@ -14,6 +14,9 @@
 <h1 id="ompl-web-development---part-5">OMPL Web Development - Part
 5</h1>
 <p><strong>2015-07-19</strong></p>
+<hr />
+<!-- TODO: use pandoc html template using the meta syntact for title and date and
+then have it insert into the page with a <hr> after -->
 <p>Benchmarking planners is a time consuming process, so instead of
 waiting on the web page to see the results, users submit jobs and are
 notified when the results become available. This process is handled by
@@ -21,7 +24,7 @@ notified when the results become available. This process is handled by
 queue implemented in Python. When a benchmarking job is submitted, it is
 given to a Celery worker to execute, freeing up the Flask server to
 continue to serve other requests. Using Celery for benchmarking was
-fairly simple to setup since the client doesn’t need any information
+fairly simple to setup since the client doesn't need any information
 from the completed job.</p>
 <p><img src="" class="img-responsive"></p>
 <p>However, solving a motion planning problem can also take a large
