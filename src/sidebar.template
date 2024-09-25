@@ -9,6 +9,83 @@
      <br>
      <a href="https://www.github.com/prb2">github</a>
      <br>
-     <a href="#" onclick="alert('LOL')">dating profile</a>
+     <br>
+<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+</svg>
+<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+</svg>
+</br>
+<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+</svg>
+<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+</svg>
+<style>
+  .square {
+    height: 128;
+    width: 128;
+    margin-right: 2px;
+  }
+</style>
+<script>
+  function getRandomNum(max) {
+    return Math.floor(Math.random() * max);
+  }
+  function getRandomColor(colors) {
+    return colors[getRandomNum(colors.length)]
+  }
+  colorSets = [
+    ["#021526", "#03346E", "#6EACDA", "#E2E2B6"],
+    ["#DEF9C4", "#9CDBA6", "#50B498", "#468585"],
+    ["#F9ED69", "#F08A5D", "#B83B5E", "#6A2C70"],
+    ["#3D30A2", "#EB5B00", "#E4003A", "#B60071"],
+  ]
+  for (s of document.getElementsByTagName("svg")) {
+    // pick a colorSet randomly for the polygon stroke="white" stroke-width=0.02s in this square
+    colors = colorSets[getRandomNum(colorSets.length)]
+    console.log("picked colors", colors)
+    lastColor = colors[0]
+    for (p of s.children){
+      if (Math.random() < 0.4) {
+        // reuse the last color
+      } else {
+        // pick a random color from the colorSet
+        lastColor = getRandomColor(colors)
+      }
+      p.setAttribute("fill", lastColor)
+    }
+  }
+</script>
 </div>
 
