@@ -22,7 +22,8 @@ Computing Group.
 
 ## About this website
 
-TODO
+This site is static HTML, generated from Markdown source files using Pandoc,
+with a simple shell script.
 
-You can view the source code for this website [here](https://github.com/prb2/prb2.github.io/).
+You can view the source code [here](https://github.com/prb2/prb2.github.io/).
 
