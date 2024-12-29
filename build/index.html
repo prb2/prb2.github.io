@@ -1,175 +1,140 @@
-<link rel="stylesheet" href="../style.css">
-
 <div class="sidebar">
-     <a href="/index.html">home</a>
-     <br>
-     <a href="/about.html">about</a>
-     <br>
-     <a href="/blog.html">blog</a>
-     <br>
-     <br>
-     <a href="https://www.github.com/prb2">github</a>
-     <br>
-     <br>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-</br>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-  <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-  <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-  <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-<style>
-  .square {
-    height: 128;
-    width: 128;
-    margin-right: 2px;
-  }
-</style>
-<script>
-  function getRandomNum(max) {
-    return Math.floor(Math.random() * max);
-  }
-  function getRandomColor(colors) {
-    return colors[getRandomNum(colors.length)]
-  }
-  colorSets = [
-    ["#021526", "#03346E", "#6EACDA", "#E2E2B6"],
-    ["#DEF9C4", "#9CDBA6", "#50B498", "#468585"],
-    ["#F9ED69", "#F08A5D", "#B83B5E", "#6A2C70"],
-    ["#3D30A2", "#EB5B00", "#E4003A", "#B60071"],
-  ]
-  for (s of document.getElementsByTagName("svg")) {
-    // pick a colorSet randomly for the polygon stroke="white" stroke-width=0.02s in this square
-    colors = colorSets[getRandomNum(colorSets.length)]
-    console.log("picked colors", colors)
-    lastColor = colors[0]
-    for (p of s.children){
-      if (Math.random() < 0.4) {
-        // reuse the last color
-      } else {
-        // pick a random color from the colorSet
-        lastColor = getRandomColor(colors)
-      }
-      p.setAttribute("fill", lastColor)
+  <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+  </svg>
+  <!-- <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+  </svg>
+  <br>
+  <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+  </svg>
+  <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+  </svg> -->
+  <style>
+    .square {
+      height: 128px;
+      width: 128px;
+      /* margin-right: 2px; */
     }
-  }
-</script>
-</div>
-
+  </style>
+  <script>
+    function getRandomNum(max) {
+      return Math.floor(Math.random() * max);
+    }
+    function getRandomColor(colors) {
+      return colors[getRandomNum(colors.length)]
+    }
+    colorSets = [
+      ["#021526", "#03346E", "#6EACDA", "#E2E2B6"],
+      ["#DEF9C4", "#9CDBA6", "#50B498", "#468585"],
+      ["#F9ED69", "#F08A5D", "#B83B5E", "#6A2C70"],
+      ["#3D30A2", "#EB5B00", "#E4003A", "#B60071"],
+    ]
+    for (s of document.getElementsByTagName("svg")) {
+      // pick a colorSet randomly for the polygon stroke="white" stroke-width=0.02s in this square
+      colors = colorSets[getRandomNum(colorSets.length)]
+      console.log("picked colors", colors)
+      lastColor = colors[0]
+      for (p of s.children) {
+        if (Math.random() < 0.4) {
+          // reuse the last color
+        } else {
+          // pick a random color from the colorSet
+          lastColor = getRandomColor(colors)
+        }
+        p.setAttribute("fill", lastColor)
+      }
+    }
+  </script>
+  <br><br><br>
+  <a href="/index.html">home</a>
+  <br>
+  <a href="/blog.html">blog</a>
+  <br>
+  <a href="/projects.html">projects</a>
+  <br>
+  <br>
+  <a href="https://www.github.com/prb2">github</a>
+</div><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-<title>
-Prudhvi Boyapalli
-</title>
-</head>
-<h1 id="prudhvi-boyapalli">Prudhvi Boyapalli</h1>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-<polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-<polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-</br>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-<polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-<svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-<polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-<polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-<polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-</svg>
-<style>
-  .square {
-    height: 128;
-    width: 128;
-    margin-right: 2px;
-  }
-</style>
-<script>
-  function getRandomNum(max) {
-    return Math.floor(Math.random() * max);
-  }
-  function getRandomColor(colors) {
-    return colors[getRandomNum(colors.length)]
-  }
-  colorSets = [
-    ["#021526", "#03346E", "#6EACDA", "#E2E2B6"],
-    ["#DEF9C4", "#9CDBA6", "#50B498", "#468585"],
-    ["#F9ED69", "#F08A5D", "#B83B5E", "#6A2C70"],
-    ["#3D30A2", "#EB5B00", "#E4003A", "#B60071"],
-  ]
-  for (s of document.getElementsByTagName("svg")) {
-    // pick a colorSet randomly for the polygon stroke="white" stroke-width=0.02s in this square
-    colors = colorSets[getRandomNum(colorSets.length)]
-    console.log("picked colors", colors)
-    lastColor = colors[0]
-    for (p of s.children){
-      if (Math.random() < 0.4) {
-        // reuse the last color
-      } else {
-        // pick a random color from the colorSet
-        lastColor = getRandomColor(colors)
-      }
-      p.setAttribute("fill", lastColor)
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Prudhvi Boyapalli</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
     }
-  }
-</script>
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Prudhvi Boyapalli</h1>
+</header>
+<h2 id="about-me">About me</h2>
+<p>I live in Seattle. Gimme a wave if you see me in the bike lane.</p>
+<p>I currently work as a software engineer at <a
+href="https://www.luminarycloud.com">Luminary Cloud</a>, a computational
+fluid dynamics (CFD) startup.</p>
+<p>Previously, I:</p>
+<ul>
+<li><p>worked on <a href="https://github.com/grailbio/reflow">Reflow</a>
+(infrastructure for next generation sequencing bioinformatics pipelines)
+at <a href="https://grail.com">GRAIL</a></p></li>
+<li><p>worked at Amazon ("Just Walk Out" cashier-less grocery store
+technology, Alexa APIs)</p></li>
+</ul>
+<p>I studied computer science at Rice University and worked as a
+research assistant under Professors Lydia Kavraki and Mark Moll in the
+Physical and Biological Computing Group.</p>
+<h2 id="about-this-website">About this website</h2>
+<p>This site is static HTML, generated from Markdown source files using
+Pandoc, with a simple shell script.</p>
+<p>You can view the source code <a
+href="https://github.com/prb2/prb2.github.io/">here</a>.</p>
+</body>
+</html>

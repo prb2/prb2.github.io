@@ -91,8 +91,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2015-06-08" />
-  <title>OMPL Web Development - Part 1</title>
+  <title>Projects</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -114,74 +113,8 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">OMPL Web Development - Part 1</h1>
-<p class="date">2015-06-08</p>
+<h1 class="title">Projects</h1>
 </header>
-<hr />
-<p>This summer, I am working in the <a
-href="http://www.kavrakilab.org">Kavraki Lab</a> research group at Rice
-University. My main project this summer will be to create a web
-application that will allow users to solve motion planning problems for
-robots using the Open Motion Planning Library.</p>
-<p>An existing application, called <a
-href="http://ompl.kavrakilab.org/gui.html">OMPL.app</a>, is available
-for desktop clients but it involves a fairly lengthy installation
-process. The purpose of the web application is to provide all of the
-features of the desktop application and then some. Users will be able to
-configure a motion planning problem and solve for a solution path. Upon
-success, the solution will be displayed and the user will be able to
-interact with the path. The functionality described thus far already
-exists in OMPL.app, but the web application will have several key
-improvements.</p>
-<h2 id="speed">Speed</h2>
-<p>One of primary motivations for creating the web version is to
-drastically reduce the time it takes to go from being interested in
-motion planning to actually creating and solving motion planning
-problems. The following steps must be carried out before solving a
-motion planning problem:</p>
-<blockquote>
-<p>OMPL.app</p>
-<ol type="1">
-<li>Download the OMPL library and its dependencies</li>
-<li>Install all dependencises</li>
-<li>Build OMPL</li>
-<li>Generate Python bindings</li>
-<li>Run OMPL.app</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>OMPL Web</p>
-<ol type="1">
-<li>Open the website</li>
-</ol>
-</blockquote>
-<p>OMPL.app can take hours to setup; the web implementation will take
-mere seconds.</p>
-<div class="subtitle">
-Benchmarking
-</div>
-<p>The other important improvement will be planner benchmarking. OMPL
-takes a sample-based approach to motion planning and there exist many
-planners for utilizing different sampling methods. In addition to the
-dozen or so planners that are available within OMPL, users can create
-their own planners and use those instead. Due to the significant
-variation in how planners operate, selecting a particular planner may
-yield better results for a specific query than some other planner. For
-this reason it is important to have the ability to compare the results
-of different planners for a given problem. Currently, planners can be
-compared on the <a href="http://plannerarena.org">Planner Arena</a>
-website.</p>
-<p>Once a user is satisfied with their problem configuration on the OMPL
-Web application, they will be able to submit a job to the server for
-benchmarking. They can specify benchmarking parameters such as the
-number of iterations to run each planner, time limits, etc. When the job
-is completed, the user will be notified and their results will be
-available on Planner Arena for analysis.</p>
-<p>In the next development blog entry, I will discuss the work that I've
-completed so far and the high level plan for the remaining
-development.</p>
-<p><a href="https://github.com/prb2/omplweb">OMPL Web on GitHub</a></p>
-<p><a href="http://ompl.kavrakilab.org">Open Motion Planning
-Library</a></p>
+<p>Foo bar</p>
 </body>
 </html>
