@@ -20,6 +20,8 @@ def build_blog_index() -> list[tuple[str, str, str]]:
     posts = []
     with open("./src/blog.md", "w") as blog_index:
         blog_index.write("---\ntitle: Blog\n---\n\n")
+        blog_index.write("|   |       |\n")
+        blog_index.write("|---|-------|\n")
         for f in sorted(os.listdir("src/posts"), reverse=True):
             if f.endswith(".md"):
                 file_path = os.path.join("src/posts", f)
@@ -30,7 +32,7 @@ def build_blog_index() -> list[tuple[str, str, str]]:
                     date = re.search(r"^date:\s*(.*)", content, re.MULTILINE).group(1)
                     fname = file_path.replace("src", "").replace(".md", ".html")
                     posts.append((fname, title, date))
-                    blog_index.write(f"- `{date}` [{title}]({fname})\n")
+                    blog_index.write(f"| {date} | [{title}]({fname}) |\n")
     return posts
 
 
