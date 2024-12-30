@@ -1,15 +1,12 @@
 @font-face {
-  font-family: Vollkorn;
-  src: url(/fonts/Vollkorn-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: AlegreyaSans;
-  src: url(/fonts/AlegreyaSans-Regular.ttf);
+  font-family: 'ComputerModernSans';
+  src: url(/fonts/cmunss.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .sidebar {
-  font-family: AlegreyaSans;
+  font-family: ComputerModernSans;
   margin-top: 100px;
   height: 100%;
   width: 25%;
@@ -23,8 +20,8 @@
 }
 
 body {
-  font-size: 20px;
-  font-family: AlegreyaSans, serif;
+  font-size: 18px;
+  font-family: ComputerModernSans, serif;
   width: 50%;
   margin-top: 100px;
   padding-left: 30%;
@@ -38,16 +35,12 @@ a {
 body hr {
   color: black;
   margin-left: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border-style: solid;
 }
 
 title {
   display: none;
-}
-
-table {
-  font-size: 20px !important;
 }
 
 /* CSS for syntax highlighting */

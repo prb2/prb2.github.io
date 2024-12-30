@@ -9,42 +9,10 @@
     <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
     <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
   </svg>
-  <!-- <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-  </svg>
-  <br>
-  <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-  </svg>
-  <svg class="square" viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
-    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
-    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
-    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
-    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
-  </svg> -->
   <style>
     .square {
       height: 128px;
       width: 128px;
-      /* margin-right: 2px; */
     }
   </style>
   <script>
@@ -75,20 +43,17 @@
         p.setAttribute("fill", lastColor)
       }
     }
-
-    // window.addEventListener('resize', function (event) {
-    //   side_len = document.getElementsByClassName("sidebar")[0].offsetWidth - 120
-    //   document.getElementsByClassName("square")[0].style.width = side_len + "px"
-    //   document.getElementsByClassName("square")[0].style.height = side_len + "px"
-    // }, true);
   </script>
+
   <br><br><br>
+
   <a href="/index.html">home</a>
   <br>
   <a href="/blog.html">blog</a>
   <br>
   <a href="/projects.html">projects</a>
   <br>
+  <a href="/rss.xml">rss</a>
   <br>
   <a href="https://www.github.com/prb2">github</a>
 </div>
