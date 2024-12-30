@@ -75,6 +75,12 @@
         p.setAttribute("fill", lastColor)
       }
     }
+
+    // window.addEventListener('resize', function (event) {
+    //   side_len = document.getElementsByClassName("sidebar")[0].offsetWidth - 120
+    //   document.getElementsByClassName("square")[0].style.width = side_len + "px"
+    //   document.getElementsByClassName("square")[0].style.height = side_len + "px"
+    // }, true);
   </script>
   <br><br><br>
   <a href="/index.html">home</a>
@@ -157,9 +163,7 @@ motion planning problem:</p>
 </blockquote>
 <p>OMPL.app can take hours to setup; the web implementation will take
 mere seconds.</p>
-<div class="subtitle">
-Benchmarking
-</div>
+<h2 id="benchmarking">Benchmarking</h2>
 <p>The other important improvement will be planner benchmarking. OMPL
 takes a sample-based approach to motion planning and there exist many
 planners for utilizing different sampling methods. In addition to the

@@ -24,9 +24,9 @@ I studied computer science at Rice University and worked as a research assistant
 under Professors Lydia Kavraki and Mark Moll in the Physical and Biological
 Computing Group.
 
+
 ## About this website
 
-This site is static HTML, generated from Markdown source files using Pandoc,
-with a simple shell script.
+This site is static HTML, generated from Markdown source files using Pandoc.
 
 You can view the source code [here](https://github.com/prb2/prb2.github.io/).

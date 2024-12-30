@@ -75,6 +75,12 @@
         p.setAttribute("fill", lastColor)
       }
     }
+
+    // window.addEventListener('resize', function (event) {
+    //   side_len = document.getElementsByClassName("sidebar")[0].offsetWidth - 120
+    //   document.getElementsByClassName("square")[0].style.width = side_len + "px"
+    //   document.getElementsByClassName("square")[0].style.height = side_len + "px"
+    // }, true);
   </script>
   <br><br><br>
   <a href="/index.html">home</a>
@@ -117,12 +123,11 @@
 <h1 class="title">OMPL Web Development - Part 4</h1>
 <p class="date">2015-07-07</p>
 </header>
+<hr />
 <p>With problem configuration and visualization implemented, the next
 big feature is benchmarking.</p>
-<div class="subtitle">
-Benchmarking
-</div>
-<h4 id="motivation">Motivation</h4>
+<h2 id="benchmarking">Benchmarking</h2>
+<h3 id="motivation">Motivation</h3>
 <p>Benchmarking is an important feature of OMPL Web that does not exist
 in its desktop counterpart. Since each planner has a unique way of
 finding solutions, different planners may be better suited for different
@@ -133,7 +138,7 @@ metrics such as time, memory, solution length, etc.</p>
 <p>Furthermore, since the planners are all sampling-based, the problem
 can be solved repeatedly to get consistent data.</p>
 <p><img src="../images/omplweb/benchmarking.png" class="img-responsive"></p>
-<h4 id="implementation">Implementation</h4>
+<h3 id="implementation">Implementation</h3>
 <p>The benchmarking functionality of OMPL Web allows a user to solve any
 given problem <code>n</code> times with multiple planners and various
 planner configurations. On the <code>Benchmarking</code> page, the user

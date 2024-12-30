@@ -75,6 +75,12 @@
         p.setAttribute("fill", lastColor)
       }
     }
+
+    // window.addEventListener('resize', function (event) {
+    //   side_len = document.getElementsByClassName("sidebar")[0].offsetWidth - 120
+    //   document.getElementsByClassName("square")[0].style.width = side_len + "px"
+    //   document.getElementsByClassName("square")[0].style.height = side_len + "px"
+    // }, true);
   </script>
   <br><br><br>
   <a href="/index.html">home</a>
@@ -182,6 +188,7 @@
 <h1 class="title">OMPL Web Development - Part 5</h1>
 <p class="date">2015-07-19</p>
 </header>
+<hr />
 <p>Benchmarking planners is a time consuming process, so instead of
 waiting on the web page to see the results, users submit jobs and are
 notified when the results become available. This process is handled by
@@ -194,9 +201,7 @@ from the completed job.</p>
 <p><img src="" class="img-responsive"></p>
 <p>However, solving a motion planning problem can also take a large
 amount of time; solving them synchronously would be impractical.</p>
-<div class="subtitle">
-Asynchronous Solving
-</div>
+<h2 id="asynchronous-solving">Asynchronous Solving</h2>
 <p>The problem with making regular motion planning asynchronous is that
 the user waits for the solution. For asynchronous solving to work, there
 must be some amount of coordination between the client and server to
