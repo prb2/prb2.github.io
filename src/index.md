@@ -2,31 +2,27 @@
 title: Prudhvi Boyapalli
 ---
 
-## About me
 
-I live in Seattle. Gimme a wave if you see me in the bike lane.
+### About me
+I'm a software engineer currently based in Seattle. Here are some things
+I've worked on:
 
-I currently work as a software engineer at <a
-href="https://www.luminarycloud.com">Luminary Cloud</a>, a computational fluid
-dynamics (CFD) startup.
+- computational fluid dynamics (CFD) APIs at [Luminary Cloud](https://www.luminarycloud.com)
 
-Previously, I:
+- [Reflow](https://github.com/grailbio/reflow), a
+programming language and runtime for distributed, incremental
+execution of next generation sequencing (NGS) bioinformatics
+pipelines at [GRAIL](https://grail.com)
 
-- worked on [Reflow](https://github.com/grailbio/reflow) (infrastructure for
-next generation sequencing bioinformatics pipelines) at
-[GRAIL](https://grail.com)
-
-- worked at Amazon ("Just Walk Out" cashier-less grocery store technology, Alexa
-APIs)
-
+- the latest generation of vision-only "Just Walk Out" cashier-less grocery
+store technology at Amazon
 
 I studied computer science at Rice University and worked as a research assistant
-under Professors Lydia Kavraki and Mark Moll in the Physical and Biological
-Computing Group.
+under Professors Lydia Kavraki and Mark Moll in the [Physical and Biological
+Computing Group](https://kavrakilab.org).
 
+<br>
 
-## About this website
+### Some blog posts
 
-This site is static HTML, generated from Markdown source files using Pandoc.
-
-You can view the source code [here](https://github.com/prb2/prb2.github.io/).
+- [foo bar](todo)

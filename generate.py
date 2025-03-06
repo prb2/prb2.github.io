@@ -38,6 +38,14 @@ def build_blog_index() -> list[tuple[str, str, str]]:
 
 def generate_html():
     print("Generating html...")
+
+    navbar_html = ""
+    with open("src/navbar.template", "r") as navbar_file:
+        navbar_html = navbar_file.read()
+    footer_html = ""
+    with open("src/footer.template", "r") as footer_file:
+        footer_html = footer_file.read()
+
     for root, dirs, files in os.walk("src"):
         for file in files:
             if file.endswith(".md"):
@@ -45,8 +53,6 @@ def generate_html():
                 fname = file_path.replace("src", "build").replace(".md", ".html")
                 print(f"\tgenerating {fname}")
                 with open(fname, "w") as html_file:
-                    with open("src/sidebar.template", "r") as sidebar:
-                        html_file.write(sidebar.read())
                     result = subprocess.run(
                         [
                             "pandoc",
@@ -62,7 +68,11 @@ def generate_html():
                         capture_output=True,
                         text=True,
                     )
-                    html_content = result.stdout.replace("↩", "&#x21A9;")
+                    html_content = (
+                        result.stdout.replace("↩", "&#x21A9;")
+                        .replace("<body>", "<body>\n" + navbar_html)
+                        .replace("</body>", footer_html + "\n</body>")
+                    )
                     html_file.write(html_content)
 
 
