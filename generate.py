@@ -18,25 +18,30 @@ def cleanup():
 def build_blog_index() -> list[tuple[str, str, str]]:
     print("Building blog index...")
     posts = []
-    year = ""
     with open("./src/blog.md", "w") as blog_index:
         blog_index.write("---\ntitle: Blog\n---\n\n")
-        for f in sorted(os.listdir("src/posts"), reverse=True):
-            if f.endswith(".md"):
-                post_year = f[0:4]
-                if post_year != year:
-                    year = post_year
-                    blog_index.write(f"\n## {post_year}\n\n")
-
-                file_path = os.path.join("src/posts", f)
-                print(f"\t{file_path}")
-                with open(file_path, "r") as post_file:
-                    content = post_file.read()
-                    title = re.search(r"^title:\s*(.*)", content, re.MULTILINE).group(1)
-                    date = re.search(r"^date:\s*(.*)", content, re.MULTILINE).group(1)
-                    fname = file_path.replace("src", "").replace(".md", ".html")
-                    posts.append((fname, title, date))
-                    blog_index.write(f"- [{title}]({fname})\n")
+        for root, dirs, files in os.walk("src/posts"):
+            if len(files) == 0:
+                # skip the post dir; we only want the per-year sub dirs
+                continue
+            year = root[-4:]
+            blog_index.write(f"\n## {year}\n\n")
+            files.sort(reverse=True)  # we want reverse chrono ordering
+            for f in files:
+                if f.endswith(".md"):
+                    file_path = os.path.join(f"src/posts/{year}", f)
+                    print(f"\t{file_path}")
+                    with open(file_path, "r") as post_file:
+                        content = post_file.read()
+                        title = re.search(
+                            r"^title:\s*(.*)", content, re.MULTILINE
+                        ).group(1)
+                        date = re.search(r"^date:\s*(.*)", content, re.MULTILINE).group(
+                            1
+                        )
+                        fname = file_path.replace("src", "").replace(".md", ".html")
+                        posts.append((fname, title, date))
+                        blog_index.write(f"- [{title}]({fname})\n")
     return posts
 
 
@@ -55,7 +60,9 @@ def generate_html():
             if file.endswith(".md"):
                 file_path = os.path.join(root, file)
                 fname = file_path.replace("src", "build").replace(".md", ".html")
-                print(f"\tgenerating {fname}")
+                base_dir = os.path.dirname(fname)
+                if not os.path.exists(base_dir):
+                    os.makedirs(base_dir)
                 with open(fname, "w") as html_file:
                     result = subprocess.run(
                         [
@@ -89,7 +96,7 @@ def generate_rss_feed(posts: list[tuple[str, str, str]]):
     for fname, title, date in posts:
         date_obj = datetime.strptime(date, "%Y-%m-%d")
         rfc822_date = formatdate(date_obj.timestamp())
-        url = f"https://prudhviboyapalli.com/{fname}"
+        url = f"https://prudhviboyapalli.com{fname}"
         items += f"""
         <item>
             <title>{title}</title>

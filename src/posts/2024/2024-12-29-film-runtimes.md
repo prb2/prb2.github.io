@@ -8,7 +8,7 @@ date: 2024-12-29
 If we take Cannes Palme d'Or winners as a proxy for "critically acclaimed"
 films: yes.
 
-<img class="figure" src="/posts/cannes_chart.png" width=100%>
+<img class="figure" src="/posts/2024/static/cannes_chart.png" width=100%>
 
 
 ## Code

@@ -21,8 +21,8 @@ I studied computer science at Rice University and worked as a research assistant
 under Professors Lydia Kavraki and Mark Moll in the [Physical and Biological
 Computing Group](https://kavrakilab.org).
 
-<br>
+<hr>
 
-### Some blog posts
+### Selected [blog](/blog.html) posts
 
-- [foo bar](todo)
+- [Have "critically acclaimed" films been getting longer?](/posts/2024/2024-12-29-film-runtimes.html)
