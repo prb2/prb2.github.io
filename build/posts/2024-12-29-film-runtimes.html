@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2015-07-19" />
-  <title>OMPL Web Development - Part 5</title>
+  <meta name="dcterms.date" content="2024-12-29" />
+  <title>Have &quot;critically acclaimed&quot; films been getting longer?</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -104,47 +104,32 @@
   <hr>
 </div>
 <header id="title-block-header">
-<h1 class="title">OMPL Web Development - Part 5</h1>
-<p class="date">2015-07-19</p>
+<h1 class="title">Have "critically acclaimed" films been getting
+longer?</h1>
+<p class="date">2024-12-29</p>
 </header>
 <hr />
-<p>Benchmarking planners is a time consuming process, so instead of
-waiting on the web page to see the results, users submit jobs and are
-notified when the results become available. This process is handled by
-<a href="http://www.celeryproject.org">Celery</a>, an asynchronous task
-queue implemented in Python. When a benchmarking job is submitted, it is
-given to a Celery worker to execute, freeing up the Flask server to
-continue to serve other requests. Using Celery for benchmarking was
-fairly simple to setup since the client doesn't need any information
-from the completed job.</p>
-<p><img src="" class="img-responsive"></p>
-<p>However, solving a motion planning problem can also take a large
-amount of time; solving them synchronously would be impractical.</p>
-<h2 id="asynchronous-solving">Asynchronous Solving</h2>
-<p>The problem with making regular motion planning asynchronous is that
-the user waits for the solution. For asynchronous solving to work, there
-must be some amount of coordination between the client and server to
-ensure that the right results are returned to the right user.</p>
-<p><img src="../images/omplweb/async_solving.png" class="img-responsive"></p>
-<p>To solve this problem, I came up with the pattern seen above. When
-the user submits a motion planning problem, the task is assigned to a
-Celery worker and the ID of that task is immediately returned to the
-client. Then, the client will periodically poll the server for the
-results.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/omplapp/poll/&lt;task_id&gt;&#39;</span>, methods<span class="op">=</span>[<span class="st">&#39;POST&#39;</span>])</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poll(task_id):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Checks if the task corresponding to the input ID has completed. If the</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    task is done solving, the solution is returned.</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> solve.AsyncResult(task_id)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> result.ready():</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> json.dumps(result.get()), <span class="dv">200</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> :</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Result for task id: &quot;</span> <span class="op">+</span> task_id <span class="op">+</span> <span class="st">&quot; isn&#39;t ready yet.&quot;</span>, <span class="dv">202</span></span></code></pre></div>
+<p>If we take Cannes Palme d'Or winners as a proxy for "critically
+acclaimed" films...yes.</p>
+<p><img class="figure" src="/posts/cannes_chart.png" width=100%></p>
+<h2 id="code">Code</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_runtime(boxd_url: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(boxd_url)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Failed to retrieve the webpage for </span><span class="sc">{</span>boxd_url<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        lines <span class="op">=</span> response.text.splitlines()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&quot;&amp;nbsp;mins&quot;</span> <span class="kw">in</span> line:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                runtime <span class="op">=</span> <span class="bu">int</span>(line.removesuffix(<span class="st">&quot;&amp;nbsp;mins &amp;nbsp;&quot;</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> runtime</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;got error </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss"> for </span><span class="sc">{</span>boxd_url<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code></pre></div>
 <hr>
 <!-- <center> -->
 <svg class="square" viewBox="0 0 6 2" xmlns="http://www.w3.org/2000/svg">
