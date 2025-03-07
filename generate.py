@@ -18,12 +18,16 @@ def cleanup():
 def build_blog_index() -> list[tuple[str, str, str]]:
     print("Building blog index...")
     posts = []
+    year = ""
     with open("./src/blog.md", "w") as blog_index:
         blog_index.write("---\ntitle: Blog\n---\n\n")
-        blog_index.write("|   |       |\n")
-        blog_index.write("|---|-------|\n")
         for f in sorted(os.listdir("src/posts"), reverse=True):
             if f.endswith(".md"):
+                post_year = f[0:4]
+                if post_year != year:
+                    year = post_year
+                    blog_index.write(f"\n## {post_year}\n\n")
+
                 file_path = os.path.join("src/posts", f)
                 print(f"\t{file_path}")
                 with open(file_path, "r") as post_file:
@@ -32,7 +36,7 @@ def build_blog_index() -> list[tuple[str, str, str]]:
                     date = re.search(r"^date:\s*(.*)", content, re.MULTILINE).group(1)
                     fname = file_path.replace("src", "").replace(".md", ".html")
                     posts.append((fname, title, date))
-                    blog_index.write(f"| {date} | [{title}]({fname}) |\n")
+                    blog_index.write(f"- [{title}]({fname})\n")
     return posts
 
 
@@ -63,6 +67,8 @@ def generate_html():
                             "markdown-smart",
                             "-t",
                             "html",
+                            "--highlight-style",
+                            "pygments",
                             file_path,
                         ],
                         capture_output=True,
