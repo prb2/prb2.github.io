@@ -1,0 +1,4 @@
+<svg class="square" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width="0.02" points="0,0  1,0  0,1" fill="#DEF9C4"></polygon>
+    <polygon stroke="white" stroke-width="0.02" points="0,1  1,0  1,1" fill="#9CDBA6"></polygon>
+</svg>
