@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2015-07-07" />
+  <title>OMPL Web Development - Part 4</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+<div class="navbar">
+  <div style="text-align: left; display: inline-block; width: 50%">
+    <a href="/index.html">home</a>&nbsp;&nbsp;
+    <a href="/blog.html">blog</a>&nbsp;&nbsp;
+    <!-- <a href="/projects.html">projects</a>&nbsp;&nbsp; -->
+    <a href="/rss.xml">rss</a>
+  </div>
+  <div style="text-align: right; display: inline-block; width: 49%">
+    <a href="https://www.github.com/prb2">github</a>
+  </div>
+  <hr>
+</div>
+<header id="title-block-header">
+<h1 class="title">OMPL Web Development - Part 4</h1>
+<p class="date">2015-07-07</p>
+</header>
+<hr />
+<p>With problem configuration and visualization implemented, the next
+big feature is benchmarking.</p>
+<h2 id="benchmarking">Benchmarking</h2>
+<h3 id="motivation">Motivation</h3>
+<p>Benchmarking is an important feature of OMPL Web that does not exist
+in its desktop counterpart. Since each planner has a unique way of
+finding solutions, different planners may be better suited for different
+types of problems. For this reason, it is important to know when to use
+a specific planner. By benchmarking multiple planners on a given
+problem, we can compare each planner's performance across various
+metrics such as time, memory, solution length, etc.</p>
+<p>Furthermore, since the planners are all sampling-based, the problem
+can be solved repeatedly to get consistent data.</p>
+<p><img src="../images/omplweb/benchmarking.png" class="img-responsive"></p>
+<h3 id="implementation">Implementation</h3>
+<p>The benchmarking functionality of OMPL Web allows a user to solve any
+given problem <code>n</code> times with multiple planners and various
+planner configurations. On the <code>Benchmarking</code> page, the user
+can add and configure the planners to be benchmarked. Then, they can
+submit a job to the server and be notified via email when the job
+completes.</p>
+<p>When the user submits a job, a <code>.cfg</code> file is created on
+the client-side containing all of the problem configuration details and
+benchmarking settings. This information is sent to the server for
+processing. The server processes this data using the benchmarking
+scripts included in OMPL and creates a SQLite database of results.
+Currently, this (very small) database is emailed to the user. This
+database file can be uploaded to <a
+href="http://plannerarena.org">Planner Arena</a> for an interactive
+visualization of the results.</p>
+<p>In the future, the benchmarking results will be made available to the
+user directly on <a href="http://plannerarena.org">Planner Arena</a>
+without the need for the user to obtain the database file.</p>
+<p><a href="https://github.com/prb2/omplweb">OMPL Web on GitHub</a></p>
+<p><a href="http://ompl.kavrakilab.org">Open Motion Planning
+Library</a></p>
+<hr>
+<!-- <center> -->
+<svg class="square" viewBox="0 0 6 2" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+    <polygon stroke="white" stroke-width=0.02 points="2,0  3,0  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="2,1  3,0  3,1" />
+    <polygon stroke="white" stroke-width=0.02 points="3,0  3,1  4,1" />
+    <polygon stroke="white" stroke-width=0.02 points="3,0  4,1  4,0" />
+    <polygon stroke="white" stroke-width=0.02 points="4,0  5,0  4,1" />
+    <polygon stroke="white" stroke-width=0.02 points="4,1  5,0  5,1" />
+    <polygon stroke="white" stroke-width=0.02 points="5,0  5,1  6,1" />
+    <polygon stroke="white" stroke-width=0.02 points="5,0  6,1  6,0" />
+    <!-- <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+    <polygon stroke="white" stroke-width=0.02 points="2,1  2,2  3,2" />
+    <polygon stroke="white" stroke-width=0.02 points="2,1  3,1  3,2" />
+    <polygon stroke="white" stroke-width=0.02 points="3,1  3,2  4,1" />
+    <polygon stroke="white" stroke-width=0.02 points="3,2  4,1  4,2" />
+    <polygon stroke="white" stroke-width=0.02 points="4,1  4,2  5,2" />
+    <polygon stroke="white" stroke-width=0.02 points="4,1  5,1  5,2" />
+    <polygon stroke="white" stroke-width=0.02 points="5,1  5,2  6,1" />
+    <polygon stroke="white" stroke-width=0.02 points="5,2  6,1  6,2" /> -->
+</svg>
+<!-- </center> -->
+<style>
+.square {
+    height: 64px;
+}
+</style>
+<script>
+    function getRandomNum(max) {
+        return Math.floor(Math.random() * max);
+    }
+    function getRandomColor(colors) {
+        return colors[getRandomNum(colors.length)]
+    }
+    colorSets = [
+        ["#021526", "#03346E", "#6EACDA", "#E2E2B6"],
+        ["#DEF9C4", "#9CDBA6", "#50B498", "#468585"],
+        ["#F9ED69", "#F08A5D", "#B83B5E", "#6A2C70"],
+        ["#3D30A2", "#EB5B00", "#E4003A", "#B60071"],
+    ]
+    for (s of document.getElementsByTagName("svg")) {
+        // pick a colorSet randomly for the polygon stroke="white" stroke-width=0.02s in this square
+        colors = colorSets[getRandomNum(colorSets.length)]
+        console.log("picked colors", colors)
+        lastColor = colors[0]
+        for (p of s.children) {
+        if (Math.random() < 0.4) {
+            // reuse the last color
+        } else {
+            // pick a random color from the colorSet
+            lastColor = getRandomColor(colors)
+        }
+        p.setAttribute("fill", lastColor)
+        }
+    }
+</script>
+</body>
+</html>

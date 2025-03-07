@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2015-06-08" />
+  <title>OMPL Web Development - Part 1</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+<div class="navbar">
+  <div style="text-align: left; display: inline-block; width: 50%">
+    <a href="/index.html">home</a>&nbsp;&nbsp;
+    <a href="/blog.html">blog</a>&nbsp;&nbsp;
+    <!-- <a href="/projects.html">projects</a>&nbsp;&nbsp; -->
+    <a href="/rss.xml">rss</a>
+  </div>
+  <div style="text-align: right; display: inline-block; width: 49%">
+    <a href="https://www.github.com/prb2">github</a>
+  </div>
+  <hr>
+</div>
+<header id="title-block-header">
+<h1 class="title">OMPL Web Development - Part 1</h1>
+<p class="date">2015-06-08</p>
+</header>
+<hr />
+<p>This summer, I am working in the <a
+href="http://www.kavrakilab.org">Kavraki Lab</a> research group at Rice
+University. My main project this summer will be to create a web
+application that will allow users to solve motion planning problems for
+robots using the Open Motion Planning Library.</p>
+<p>An existing application, called <a
+href="http://ompl.kavrakilab.org/gui.html">OMPL.app</a>, is available
+for desktop clients but it involves a fairly lengthy installation
+process. The purpose of the web application is to provide all of the
+features of the desktop application and then some. Users will be able to
+configure a motion planning problem and solve for a solution path. Upon
+success, the solution will be displayed and the user will be able to
+interact with the path. The functionality described thus far already
+exists in OMPL.app, but the web application will have several key
+improvements.</p>
+<h2 id="speed">Speed</h2>
+<p>One of primary motivations for creating the web version is to
+drastically reduce the time it takes to go from being interested in
+motion planning to actually creating and solving motion planning
+problems. The following steps must be carried out before solving a
+motion planning problem:</p>
+<blockquote>
+<p>OMPL.app</p>
+<ol type="1">
+<li>Download the OMPL library and its dependencies</li>
+<li>Install all dependencises</li>
+<li>Build OMPL</li>
+<li>Generate Python bindings</li>
+<li>Run OMPL.app</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>OMPL Web</p>
+<ol type="1">
+<li>Open the website</li>
+</ol>
+</blockquote>
+<p>OMPL.app can take hours to setup; the web implementation will take
+mere seconds.</p>
+<h2 id="benchmarking">Benchmarking</h2>
+<p>The other important improvement will be planner benchmarking. OMPL
+takes a sample-based approach to motion planning and there exist many
+planners for utilizing different sampling methods. In addition to the
+dozen or so planners that are available within OMPL, users can create
+their own planners and use those instead. Due to the significant
+variation in how planners operate, selecting a particular planner may
+yield better results for a specific query than some other planner. For
+this reason it is important to have the ability to compare the results
+of different planners for a given problem. Currently, planners can be
+compared on the <a href="http://plannerarena.org">Planner Arena</a>
+website.</p>
+<p>Once a user is satisfied with their problem configuration on the OMPL
+Web application, they will be able to submit a job to the server for
+benchmarking. They can specify benchmarking parameters such as the
+number of iterations to run each planner, time limits, etc. When the job
+is completed, the user will be notified and their results will be
+available on Planner Arena for analysis.</p>
+<p>In the next development blog entry, I will discuss the work that I've
+completed so far and the high level plan for the remaining
+development.</p>
+<p><a href="https://github.com/prb2/omplweb">OMPL Web on GitHub</a></p>
+<p><a href="http://ompl.kavrakilab.org">Open Motion Planning
+Library</a></p>
+<hr>
+<!-- <center> -->
+<svg class="square" viewBox="0 0 6 2" xmlns="http://www.w3.org/2000/svg">
+    <polygon stroke="white" stroke-width=0.02 points="0,0  1,0  0,1" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,0  1,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  1,1  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,0  2,1  2,0" />
+    <polygon stroke="white" stroke-width=0.02 points="2,0  3,0  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="2,1  3,0  3,1" />
+    <polygon stroke="white" stroke-width=0.02 points="3,0  3,1  4,1" />
+    <polygon stroke="white" stroke-width=0.02 points="3,0  4,1  4,0" />
+    <polygon stroke="white" stroke-width=0.02 points="4,0  5,0  4,1" />
+    <polygon stroke="white" stroke-width=0.02 points="4,1  5,0  5,1" />
+    <polygon stroke="white" stroke-width=0.02 points="5,0  5,1  6,1" />
+    <polygon stroke="white" stroke-width=0.02 points="5,0  6,1  6,0" />
+    <!-- <polygon stroke="white" stroke-width=0.02 points="0,1  0,2  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="0,1  1,1  1,2" />
+    <polygon stroke="white" stroke-width=0.02 points="1,1  1,2  2,1" />
+    <polygon stroke="white" stroke-width=0.02 points="1,2  2,1  2,2" />
+    <polygon stroke="white" stroke-width=0.02 points="2,1  2,2  3,2" />
+    <polygon stroke="white" stroke-width=0.02 points="2,1  3,1  3,2" />
+    <polygon stroke="white" stroke-width=0.02 points="3,1  3,2  4,1" />
+    <polygon stroke="white" stroke-width=0.02 points="3,2  4,1  4,2" />
+    <polygon stroke="white" stroke-width=0.02 points="4,1  4,2  5,2" />
+    <polygon stroke="white" stroke-width=0.02 points="4,1  5,1  5,2" />
+    <polygon stroke="white" stroke-width=0.02 points="5,1  5,2  6,1" />
+    <polygon stroke="white" stroke-width=0.02 points="5,2  6,1  6,2" /> -->
+</svg>
+<!-- </center> -->
+<style>
+.square {
+    height: 64px;
+}
+</style>
+<script>
+    function getRandomNum(max) {
+        return Math.floor(Math.random() * max);
+    }
+    function getRandomColor(colors) {
+        return colors[getRandomNum(colors.length)]
+    }
+    colorSets = [
+        ["#021526", "#03346E", "#6EACDA", "#E2E2B6"],
+        ["#DEF9C4", "#9CDBA6", "#50B498", "#468585"],
+        ["#F9ED69", "#F08A5D", "#B83B5E", "#6A2C70"],
+        ["#3D30A2", "#EB5B00", "#E4003A", "#B60071"],
+    ]
+    for (s of document.getElementsByTagName("svg")) {
+        // pick a colorSet randomly for the polygon stroke="white" stroke-width=0.02s in this square
+        colors = colorSets[getRandomNum(colorSets.length)]
+        console.log("picked colors", colors)
+        lastColor = colors[0]
+        for (p of s.children) {
+        if (Math.random() < 0.4) {
+            // reuse the last color
+        } else {
+            // pick a random color from the colorSet
+            lastColor = getRandomColor(colors)
+        }
+        p.setAttribute("fill", lastColor)
+        }
+    }
+</script>
+</body>
+</html>

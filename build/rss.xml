@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Prudhvi Boyapalli</title>
+        <description>Prudhvi Boyapalli's Blog</description>
+        <link>https://prudhviboyapalli.com</link>
+        <atom:link href="https://prudhviboyapalli.com/rss.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Have "critically acclaimed" films been getting longer?</title>
+            <link>https://prudhviboyapalli.com/posts/2024/2024-12-29-film-runtimes.html</link>
+            <guid>https://prudhviboyapalli.com/posts/2024/2024-12-29-film-runtimes.html</guid>
+            <pubDate>Sun, 29 Dec 2024 08:00:00 -0000</pubDate>
+        </item>
+        <item>
+            <title>OMPL Web Development - Part 5</title>
+            <link>https://prudhviboyapalli.com/posts/2015/2015-07-19-OMPLDev5.html</link>
+            <guid>https://prudhviboyapalli.com/posts/2015/2015-07-19-OMPLDev5.html</guid>
+            <pubDate>Sun, 19 Jul 2015 07:00:00 -0000</pubDate>
+        </item>
+        <item>
+            <title>OMPL Web Development - Part 4</title>
+            <link>https://prudhviboyapalli.com/posts/2015/2015-07-07-OMPLDev4.html</link>
+            <guid>https://prudhviboyapalli.com/posts/2015/2015-07-07-OMPLDev4.html</guid>
+            <pubDate>Tue, 07 Jul 2015 07:00:00 -0000</pubDate>
+        </item>
+        <item>
+            <title>OMPL Web Development - Part 3</title>
+            <link>https://prudhviboyapalli.com/posts/2015/2015-07-07-OMPLDev3.html</link>
+            <guid>https://prudhviboyapalli.com/posts/2015/2015-07-07-OMPLDev3.html</guid>
+            <pubDate>Tue, 07 Jul 2015 07:00:00 -0000</pubDate>
+        </item>
+        <item>
+            <title>OMPL Web Development - Part 2</title>
+            <link>https://prudhviboyapalli.com/posts/2015/2015-06-16-OMPLDev2.html</link>
+            <guid>https://prudhviboyapalli.com/posts/2015/2015-06-16-OMPLDev2.html</guid>
+            <pubDate>Tue, 16 Jun 2015 07:00:00 -0000</pubDate>
+        </item>
+        <item>
+            <title>OMPL Web Development - Part 1</title>
+            <link>https://prudhviboyapalli.com/posts/2015/2015-06-08-OMPLDev1.html</link>
+            <guid>https://prudhviboyapalli.com/posts/2015/2015-06-08-OMPLDev1.html</guid>
+            <pubDate>Mon, 08 Jun 2015 07:00:00 -0000</pubDate>
+        </item>
+    </channel>
+</rss>
